@@ -1,0 +1,141 @@
+{
+  "rules": {
+    "num_decks": 2,
+    "reshuffle_threshold": 15,
+    "max_hands": 4,
+    "dealer_stands_soft_17": true,
+    "dealer_peek": true,
+    "double_after_split": true,
+    "hit_split_aces": true,
+    "resplit_aces": true,
+    "blackjack_payout": 1.5,
+    "bet_sizes": [
+      100,
+      500,
+      1000
+    ]
+  },
+  "contextual_bandit_explanation": "Bet size does not affect shoe transition; gamma=0 and Q(s,a)=E[r|s,a]. Training rewards are chips/1000.",
+  "visit_count": {
+    "definition": "estimated visits in (strategy cell × TC interval × penetration interval)",
+    "sample_rate": 0.02,
+    "sample_capacity_reached": false,
+    "tc_half_width_used": 1.0,
+    "penetration_half_width": 0.1
+  },
+  "strategy": {
+    "hard": {
+      "neutral_constructed_tc": {
+        "min_tc": -0.0,
+        "max_tc": -0.0
+      },
+      "high_constructed_tc": {
+        "min_tc": 4.8533333333333335,
+        "max_tc": 4.918918918918918
+      },
+      "changed_cells": 2
+    },
+    "soft": {
+      "neutral_constructed_tc": {
+        "min_tc": -0.0,
+        "max_tc": -0.0
+      },
+      "high_constructed_tc": {
+        "min_tc": 4.8533333333333335,
+        "max_tc": 4.8533333333333335
+      },
+      "changed_cells": 0
+    },
+    "pair": {
+      "neutral_constructed_tc": {
+        "min_tc": -0.0,
+        "max_tc": -0.0
+      },
+      "high_constructed_tc": {
+        "min_tc": 4.8533333333333335,
+        "max_tc": 4.8533333333333335
+      },
+      "changed_cells": 0
+    },
+    "illustrious18_named_cells": [
+      {
+        "cell": "16v10",
+        "neutral_action": "S",
+        "tc_plus5_action": "S",
+        "changed": false
+      },
+      {
+        "cell": "12v3",
+        "neutral_action": "S",
+        "tc_plus5_action": "S",
+        "changed": false
+      },
+      {
+        "cell": "13v2",
+        "neutral_action": "S",
+        "tc_plus5_action": "S",
+        "changed": false
+      },
+      {
+        "cell": "12v2",
+        "neutral_action": "S",
+        "tc_plus5_action": "S",
+        "changed": false
+      }
+    ]
+  },
+  "count_concept": {
+    "linear_weights": [
+      0.013353411048407936,
+      0.006167366971019847,
+      -0.052525015013670455,
+      0.053575293435016075,
+      -0.04940357985757524,
+      -0.017182968746419783,
+      -0.03633538437491392,
+      -0.03635248169093079,
+      0.09221044949426974,
+      0.026492908734796573
+    ],
+    "identifiability_note": "composition weights reported as the zero-mean representative; only differences between card weights are identified",
+    "penetration_coefficient": 0.025175796608976887,
+    "correlation_with_hilo": -0.28106153225777564,
+    "correlation_with_inverse_hilo": 0.28106153225777564
+  },
+  "oracle_and_regret": {
+    "oracle_states": 4,
+    "oracle_sign_confident_fraction": 0.0,
+    "mean_regret": 59.375,
+    "cumulative_regret": 237.5,
+    "decision_accuracy_by_abs_tc": {
+      "[0,1)": {
+        "n": 0,
+        "accuracy": NaN
+      },
+      "[1,2)": {
+        "n": 0,
+        "accuracy": NaN
+      },
+      "[2,3)": {
+        "n": 0,
+        "accuracy": NaN
+      },
+      "[3,5)": {
+        "n": 0,
+        "accuracy": NaN
+      },
+      "[5,inf)": {
+        "n": 0,
+        "accuracy": NaN
+      }
+    }
+  },
+  "final_profit": {
+    "rounds": 128,
+    "mean_chips_per_round": -136.71875,
+    "standard_error": 54.68200724665409,
+    "ci95_low": -243.895484203442,
+    "ci95_high": -29.54201579655799,
+    "total_profit": -17500.0
+  }
+}

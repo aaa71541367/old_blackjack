@@ -1,0 +1,3 @@
+rounds,epsilon,mean_loss,mean_ev,buffer_size,gradient_steps,emergency_refills,elapsed_seconds
+256,0.9999858133333334,0.5648578951756159,-0.4609375,316,6,0,0.02
+512,0.9999696,0.5729756727814674,-0.37109375,625,14,0,0.03

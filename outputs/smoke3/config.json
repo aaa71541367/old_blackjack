@@ -1,0 +1,68 @@
+{
+  "rules": {
+    "num_decks": 2,
+    "reshuffle_threshold": 15,
+    "max_hands": 4,
+    "dealer_stands_soft_17": true,
+    "dealer_peek": true,
+    "double_after_split": true,
+    "hit_split_aces": true,
+    "resplit_aces": true,
+    "blackjack_payout": 1.5,
+    "bet_sizes": [
+      100,
+      500,
+      1000
+    ]
+  },
+  "training": {
+    "seed": 20260716,
+    "num_envs": 32,
+    "phase1_rounds": 512,
+    "phase2_rounds": 512,
+    "log_interval_rounds": 256,
+    "checkpoint_interval_rounds": 512,
+    "visit_sample_rate": 0.02,
+    "visit_sample_capacity": 2000000,
+    "play": {
+      "replay_capacity": 1000000,
+      "batch_size": 32,
+      "learning_rate": 0.0001,
+      "target_sync_steps": 1000,
+      "warmup_transitions": 64,
+      "gradient_updates_per_vector_step": 1,
+      "max_grad_norm": 10.0,
+      "epsilon_start": 1.0,
+      "epsilon_end": 0.05,
+      "epsilon_decay_steps": 15000000
+    },
+    "bet": {
+      "replay_capacity": 1000000,
+      "batch_size": 32,
+      "learning_rate": 5e-05,
+      "target_sync_steps": 1000,
+      "warmup_transitions": 64,
+      "gradient_updates_per_vector_step": 1,
+      "max_grad_norm": 10.0,
+      "epsilon_start": 1.0,
+      "epsilon_end": 0.05,
+      "epsilon_decay_steps": 80000000
+    }
+  },
+  "evaluation": {
+    "strategy_remaining_fraction": 0.75,
+    "neutral_true_count": 0.0,
+    "high_true_count": 5.0,
+    "tc_half_width": 0.5,
+    "fallback_tc_half_width": 1.0,
+    "penetration_half_width": 0.1,
+    "low_confidence_visits": 1000,
+    "auto_widen_min_visits_per_cell": 1000,
+    "bet_state_samples": 128,
+    "oracle_states": 4,
+    "oracle_rollouts_per_state": 20,
+    "final_profit_rounds": 128
+  },
+  "output_dir": "outputs/smoke3",
+  "device": "auto"
+}
